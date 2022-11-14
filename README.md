@@ -55,7 +55,7 @@ NOTE: Applications are global in Drogue Cloud, so if you're using the sandbox, m
 
 ## Configuring the application
 
-Edit the [drogue.ino](drogue.ino) example and adjust the following variables:
+Open the [drogue.ino](drogue/drogue.ino) sketch and adjust the following variables:
 
 * WIFI\_SSID - You local wifi access point SSID.
 * WIFI\_PSK - You local wifi access point key.
