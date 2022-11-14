@@ -1,8 +1,8 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-char WIFI_SSID[] = "Redhat";
-char WIFI_PSK[] = "redhatmesh";
+char WIFI_SSID[] = "XXX";
+char WIFI_PSK[] = "XXX";
 
 // User name is <device>@<application>
 char DROGUE_USER[] = "device1@example-app";
@@ -32,8 +32,9 @@ void loop() {
   https.setInsecure();
   Serial.println("Reporting temperature...");
   
-  // TODO: Read this from your sensor
-  char payload[] = "{\"temp\": 22.4}";
+  char payload[64];
+  float temp = analogReadTemp();
+  snprintf(payload, 64, "{\"temp\":%f}", temp);
 
   if (https.begin(DROGUE_URL)) {
     https.setAuthorization(DROGUE_USER, DROGUE_PASS);

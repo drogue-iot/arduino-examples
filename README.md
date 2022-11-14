@@ -30,7 +30,7 @@ Install the tools and IDEs required for Arduino, have a look at [arduino-pico do
 On your computer connected to the board, you need the following tools installed:
 
 * `drg` - Download the [latest release](https://github.com/drogue-iot/drg/releases) for your platform.
-* `mpremote` - Run `pip3 install mpremote` (assumes you have Python installed)
+* `Arduino IDE` - Download [here](https://www.arduino.cc/en/software).
 
 ## Configuring Drogue Cloud
 
