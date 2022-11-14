@@ -68,7 +68,7 @@ Edit the [drogue.ino](drogue.ino) example and adjust the following variables:
 
 Run your application from your Arduino IDE.
 
-Logs from your application will appear in the serial console of the IDE, and the device should start to publish the temperature once it's connected.
+Logs from your application will appear in the serial console of the IDE, and the device should start to publish the temperature once it's connected. To debug, enable the Serial Monitor in the Arduino IDE.
 
 To learn more about how to send data to Drogue Cloud, have a look at the [endpoint documentation](https://book.drogue.io/drogue-cloud/dev/user-guide/endpoint-http.html).
 

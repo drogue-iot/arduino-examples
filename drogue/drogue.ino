@@ -8,7 +8,7 @@ char WIFI_PSK[] = "XXX";
 char DROGUE_USER[] = "device1@example-app";
 char DROGUE_PASS[] = "hey-rodney";
 
-char DROGUE_URL[] = "https://http.sandbox.drogue.cloud/v1/pico";
+char DROGUE_URL[] = "https://http.sandbox.drogue.cloud/v1/pico?ct=10";
 
 WiFiClient client;
 
@@ -44,8 +44,13 @@ void loop() {
       Serial.println("HTTP request sent");
       if (httpCode == HTTP_CODE_OK) {
         const String& payload = https.getString();
-        Serial.println("received response:");
-        Serial.println(payload);
+        if (payload == "{\"led\":\"on\"}") {
+          Serial.println("TURN ON");
+          digitalWrite(32, 1);
+        } else {
+          Serial.println("TURN OFF");
+          digitalWrite(32, 0);
+        }
       } else {
         Serial.printf("Received HTTP code %d: %s\n", httpCode, https.errorToString(httpCode).c_str());
       }
